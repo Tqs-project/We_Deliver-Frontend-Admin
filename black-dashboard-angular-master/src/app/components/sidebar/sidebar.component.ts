@@ -36,13 +36,13 @@ export const ROUTES: RouteInfo[] = [
     class: ''
   },
   {
-    path: '/user',
-    title: 'Money',
+    path: '/business',
+    title: 'Business',
 
     icon: 'icon-coins',
     class: ''
   },
-  {
+  /*{
     path: '/tables',
     title: 'Table List',
 
@@ -55,7 +55,7 @@ export const ROUTES: RouteInfo[] = [
 
     icon: 'icon-align-center',
     class: ''
-  }
+  }*/
 ];
 
 @Component({

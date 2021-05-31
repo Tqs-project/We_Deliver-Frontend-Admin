@@ -10,6 +10,7 @@ import { TypographyComponent } from '../../pages/typography/typography.component
 import {StoresComponent} from '../../pages/stores/stores.component';
 import {RidersComponent} from '../../pages/riders/riders.component';
 import {ClientsComponent} from '../../pages/clients/clients.component';
+import {BusinessComponent} from '../../pages/business/business.component';
 
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
@@ -19,6 +20,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: 'stores', component: StoresComponent },
   { path: 'riders', component: RidersComponent },
   { path: 'clients', component: ClientsComponent },
+  { path: 'business', component: BusinessComponent },
 
   { path: 'icons', component: IconsComponent },
   { path: 'maps', component: MapComponent },

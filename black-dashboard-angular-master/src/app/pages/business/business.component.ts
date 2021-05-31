@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: 'dashboard.component.html'
+  selector: 'app-business',
+  templateUrl: './business.component.html',
+  styleUrls: ['./business.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class BusinessComponent implements OnInit {
   public canvas : any;
   public ctx;
   public datasets: any;
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
@@ -307,91 +308,13 @@ export class DashboardComponent implements OnInit {
       }
     };
 
-    this.canvas = document.getElementById('chartLineRed');
-    this.ctx = this.canvas.getContext('2d');
-
-    var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(66,134,121,0.15)');
-    gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); // green colors
-    gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); // green colors
-
-    var data = {
-      labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN'],
-      datasets: [{
-        label: 'Orders',
-        fill: true,
-        backgroundColor: gradientStroke,
-        borderColor: '#00d6b4',
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        pointBackgroundColor: '#00d6b4',
-        pointBorderColor: 'rgba(255,255,255,0)',
-        pointHoverBackgroundColor: '#00d6b4',
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: [300, 450, 570, 450, 520],
-      }]
-    };
-
-    var myChart = new Chart(this.ctx, {
-      type: 'line',
-      data: data,
-      options: gradientChartOptionsConfigurationWithTooltipRed
-    });
-
-
-    /*this.canvas = document.getElementById('chartLineGreen');
-    this.ctx = this.canvas.getContext('2d');
-
-
-    var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(66,134,121,0.15)');
-    gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); // green colors
-    gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); // green colors
-
-    var data = {
-      labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY'],
-      datasets: [{
-        label: 'Orders',
-        fill: true,
-        backgroundColor: gradientStroke,
-        borderColor: '#00d6b4',
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        pointBackgroundColor: '#00d6b4',
-        pointBorderColor: 'rgba(255,255,255,0)',
-        pointHoverBackgroundColor: '#00d6b4',
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
-      }]
-    };*/
-
-    var myChart = new Chart(this.ctx, {
-      type: 'line',
-      data: data,
-      options: gradientChartOptionsConfigurationWithTooltipGreen
-
-    });
-
-
-
     var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     this.datasets = [
-      [100, 70, 90, 70, 85],
-      [40, 10, 0, 20, 35],
-      [3, 8, 10, 15, 20]
+      [6000, 10000, 7870, 6800, 10580],
+      [4000, 2000, 4500, 3700, 5360],
+      [10000, 12000, 12370, 10500, 15940]
     ];
     this.data = this.datasets[0];
-
 
 
     this.canvas = document.getElementById('chartBig1');
@@ -399,9 +322,9 @@ export class DashboardComponent implements OnInit {
 
     var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
 
-    gradientStroke.addColorStop(1, 'rgba(233,32,16,0.2)');
-    gradientStroke.addColorStop(0.4, 'rgba(233,32,16,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(233,32,16,0)'); // red colors
+    gradientStroke.addColorStop(1, 'rgba(66,134,121,0.15)');
+    gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); // green colors
+    gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); // green colors
 
     var config = {
       type: 'line',
@@ -411,13 +334,13 @@ export class DashboardComponent implements OnInit {
           label: 'New Users',
           fill: true,
           backgroundColor: gradientStroke,
-          borderColor: '#ec250d',
+          borderColor: '#00d6b4',
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          pointBackgroundColor: '#ec250d',
+          pointBackgroundColor: '#00d6b4',
           pointBorderColor: 'rgba(255,255,255,0)',
-          pointHoverBackgroundColor: '#ec250d',
+          pointHoverBackgroundColor: '#00d6b4',
           pointBorderWidth: 20,
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
@@ -425,42 +348,10 @@ export class DashboardComponent implements OnInit {
           data: this.data,
         }]
       },
-      options: gradientChartOptionsConfigurationWithTooltipRed
+      options: gradientChartOptionsConfigurationWithTooltipGreen
     };
     this.myChartData = new Chart(this.ctx, config);
 
-
-    this.canvas = document.getElementById('WeeklySalesChart');
-    this.ctx  = this.canvas.getContext('2d');
-    var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
-    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); // blue colors
-
-
-    var myChart = new Chart(this.ctx, {
-      type: 'bar',
-      responsive: true,
-      legend: {
-        display: false
-      },
-      data: {
-        labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-        datasets: [{
-          label: 'Sales',
-          fill: true,
-          backgroundColor: gradientStroke,
-          hoverBackgroundColor: gradientStroke,
-          borderColor: '#1f8ef1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          data: [140, 138, 190, 255],
-        }]
-      },
-      options: gradientBarChartConfiguration
-    });
 
   }
   public updateOptions() {
