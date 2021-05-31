@@ -386,7 +386,7 @@ export class DashboardComponent implements OnInit {
 
     var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     this.datasets = [
-      [100, 70, 90, 70, 85],
+      // [100, 70, 90, 70, 85],
       [40, 10, 0, 20, 35],
       [3, 8, 10, 15, 20]
     ];

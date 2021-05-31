@@ -28,13 +28,13 @@ export const ROUTES: RouteInfo[] = [
 
     icon: 'icon-delivery-fast',
     class: '' },
-  {
+  /*{
     path: '/clients',
     title: 'Clients',
 
     icon: 'icon-single-02',
     class: ''
-  },
+  },*/
   {
     path: '/business',
     title: 'Business',
