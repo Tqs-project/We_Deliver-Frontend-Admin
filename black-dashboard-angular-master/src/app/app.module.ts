@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -29,8 +30,9 @@ import { BusinessComponent } from './pages/business/business.component';
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, ClientsComponent, StoresComponent, RidersComponent, BusinessComponent],
-  providers: [],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, ClientsComponent, StoresComponent,
+    RidersComponent, BusinessComponent],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
