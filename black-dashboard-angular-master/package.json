@@ -11,7 +11,8 @@
     "e2e": "ng e2e",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "heroku-postbuild": "ng build --prod",
-    "build:prod": "ng build --prod"
+    "build:prod": "ng build --prod",
+    "postinstall": "ng build"
   },
   "repository": {
     "type": "git",
