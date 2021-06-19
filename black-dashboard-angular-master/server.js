@@ -4,11 +4,10 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/black-dashboard-angular-master'));
+app.use(express.static('./dist/black-dashboard-angular-master'));
 
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/black-dashboard-angular-master/index.html'));
+app.get('/*', function (req, res) {
+    res.sendFile('index.html', {root:'dist/black-dashboard-angular-master/'}),
 });
 
 // Start the app by listening on the default Heroku port
