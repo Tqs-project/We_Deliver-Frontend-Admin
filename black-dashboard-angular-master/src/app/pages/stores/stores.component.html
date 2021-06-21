@@ -27,31 +27,24 @@
           <table class=" table tablesorter" id="">
             <thead class=" text-primary">
             <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th class=" text-center">Profit</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Joined Date</th>
+              <th>Address</th>
+              <th>Iban</th>
+              <th>Phone Number</th>
+              <th>Type</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>Garrafeira Martins</td>
-              <td>Aveiro</td>
-              <td class=" text-center">6,738€</td>
-            </tr>
-            <tr>
-              <td>PortoDrinks</td>
-              <td>Porto</td>
-              <td class=" text-center">3,789€</td>
-            </tr>
-            <tr>
-              <td>Pina</td>
-              <td>Aveiro</td>
-              <td class=" text-center">6,142€</td>
-            </tr>
-            <tr>
-              <td>Galeria</td>
-              <td>Aveiro</td>
-              <td class=" text-center">8,735€</td>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.username }}</td>
+              <td>{{ order.email }}</td>
+              <td>{{ order.joinedDate }}</td>
+              <td>{{ order.address }}</td>
+              <td>{{ order.iban }}</td>
+              <td>{{ order.phoneNumber }}</td>
+              <td>{{ order.typeOfService }}</td>
             </tr>
             </tbody>
           </table>
@@ -60,42 +53,4 @@
       </div>
     </div>
   </div>
-
-  <!--<div class=" card card-tasks">
-    <div class=" card-header">
-      <h6 class=" title d-inline">Tasks</h6>
-    </div>
-    <div class=" card-body">
-      <div class=" table-full-width table-responsive">
-        <table class=" table">
-          <tbody>
-          <tr>
-            <td>
-              <p class=" title">Insert Products</p>
-              <p class=" text-muted">
-                30/05 17:32 - Store: Garrafeira Martins wants to add more products.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p class=" title">New Store</p>
-              <p class=" text-muted">
-                31/05 12:50 - Store: Garrafeira Soares wants to join the DrinkUp business.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p class=" title">Remove Store</p>
-              <p class=" text-muted">
-                31/05 14:25 - Store: Pina wants to leave the DrinkUp business.
-              </p>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>-->
 </div>

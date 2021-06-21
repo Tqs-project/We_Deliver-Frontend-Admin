@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import {BasicQueriesService} from '../../basic-queries.service';
+import {Order} from '../../models/Order';
+import {HttpEvent} from '@angular/common/http';
 
 @Component({
   selector: 'app-business',
@@ -16,9 +19,23 @@ export class BusinessComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
 
-  constructor() { }
+  private totalMoney: number;
+  private orders: HttpEvent<Order[]>;
+
+  constructor(
+    private adminService: BasicQueriesService
+  ) {
+    this.totalMoney = 0;
+  }
 
   ngOnInit() {
+    this.adminService.getOrders().subscribe(
+      response => {
+        console.log(response);
+        this.orders = response;
+      }
+    );
+
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
       legend: {

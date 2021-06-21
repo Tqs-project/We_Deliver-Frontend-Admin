@@ -27,31 +27,22 @@
             <table class=" table tablesorter" id="">
               <thead class=" text-primary">
               <tr>
-                <th>Name</th>
-                <th>Number of Rides</th>
-                <th class=" text-center">Money Made</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Joined At</th>
+                <th>Phone Number</th>
+                <th>Vehicle Plate</th>
+                <th>Busy</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Artur Antunes</td>
-                <td>53</td>
-                <td class=" text-center">408€</td>
-              </tr>
-              <tr>
-                <td>Martim Magalhães</td>
-                <td>11</td>
-                <td class=" text-center">62€</td>
-              </tr>
-              <tr>
-                <td>Sofia Sousa</td>
-                <td>72</td>
-                <td class=" text-center">690€</td>
-              </tr>
-              <tr>
-                <td>Margarida Marques</td>
-                <td>49</td>
-                <td class=" text-center">445€</td>
+              <tr *ngFor="let rider of riders">
+                <td>{{ rider.username }}</td>
+                <td>{{ rider.email }}</td>
+                <td>{{ rider.joinedAt }}</td>
+                <td>{{ rider.phoneNumber }}</td>
+                <td>{{ rider.vehiclePlate }}</td>
+                <td>{{ rider.busy }}</td>
               </tr>
               </tbody>
             </table>
