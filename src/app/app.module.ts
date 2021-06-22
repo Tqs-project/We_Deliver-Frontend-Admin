@@ -18,6 +18,7 @@ import { ClientsComponent } from './pages/clients/clients.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { RidersComponent } from './pages/riders/riders.component';
 import { BusinessComponent } from './pages/business/business.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { BusinessComponent } from './pages/business/business.component';
     ToastrModule.forRoot()
   ],
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, ClientsComponent, StoresComponent,
-    RidersComponent, BusinessComponent],
+    RidersComponent, BusinessComponent, LoginComponent],
   providers: [Title],
   bootstrap: [AppComponent]
 })

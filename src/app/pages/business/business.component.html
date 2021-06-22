@@ -5,7 +5,7 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h4 class=" card-title">Riders</h4>
+              <h4 class=" card-title">Orders</h4>
             </div>
             <div class=" col-sm-6 ">
               <div ngbDropdown class="float-right">
@@ -27,36 +27,29 @@
             <table class=" table tablesorter" id="">
               <thead class=" text-primary">
               <tr>
-                <th>Name</th>
-                <th>Number of Rides</th>
-                <th class=" text-center">Money Made</th>
+                <th>Customer Username</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Timestamp</th>
+                <th>Status</th>
+                <th>Cost</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Artur Antunes</td>
-                <td>53</td>
-                <td class=" text-center">408€</td>
-              </tr>
-              <tr>
-                <td>Martim Magalhães</td>
-                <td>11</td>
-                <td class=" text-center">62€</td>
-              </tr>
-              <tr>
-                <td>Sofia Sousa</td>
-                <td>72</td>
-                <td class=" text-center">690€</td>
-              </tr>
-              <tr>
-                <td>Margarida Marques</td>
-                <td>49</td>
-                <td class=" text-center">445€</td>
+              <tr *ngFor="let order of orders">
+                <td>{{ order.username }}</td>
+                <td>{{ order.customerLocation }}</td>
+                <td>{{ order.location }}</td>
+                <td>{{ order.orderTimestamp }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.cost }}</td>
               </tr>
               </tbody>
             </table>
           </div>
         </div>
+
+        <div style="text-align: center; width: 100%;">Total sales: {{ totalMoney }}€</div>
       </div>
     </div>
   </div>

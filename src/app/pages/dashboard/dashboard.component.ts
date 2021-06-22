@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import {BasicQueriesService} from '../../basic-queries.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,9 +16,23 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
 
-  constructor() {}
+  constructor(
+    private adminService: BasicQueriesService
+  ) {}
 
   ngOnInit() {
+    this.adminService.getRiders().subscribe(
+      (response) => console.log(response)
+    );
+
+    this.adminService.getOrders().subscribe(
+      response => console.log(response)
+    )
+
+    this.adminService.getCustomers().subscribe(
+      response => console.log(response)
+    )
+
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
       legend: {
