@@ -11,7 +11,7 @@ import {HttpEvent} from '@angular/common/http';
 })
 export class StoresComponent implements OnInit {
 
-  orders: Customer[];
+  customers: Customer[];
 
   constructor(
     private adminService: BasicQueriesService
@@ -20,7 +20,7 @@ export class StoresComponent implements OnInit {
   ngOnInit(): void {
     this.adminService.getCustomers().subscribe(
       response => { console.log(response);
-        this.orders = response}
+        this.customers = response}
     )
   }
 

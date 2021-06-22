@@ -19,8 +19,8 @@ export class BusinessComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
 
-  private totalMoney: number;
-  private orders: Order[];
+  totalMoney: number;
+  orders: Order[];
 
   constructor(
     private adminService: BasicQueriesService

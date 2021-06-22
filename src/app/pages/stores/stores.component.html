@@ -37,14 +37,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let order of orders">
-              <td>{{ order.username }}</td>
-              <td>{{ order.email }}</td>
-              <td>{{ order.joinedAt }}</td>
-              <td>{{ order.address }}</td>
-              <td>{{ order.iban }}</td>
-              <td>{{ order.phoneNumber }}</td>
-              <td>{{ order.typeOfService }}</td>
+            <tr *ngFor="let customer of customers">
+              <td>{{ customer.username }}</td>
+              <td>{{ customer.email }}</td>
+              <td>{{ customer.joinedAt }}</td>
+              <td>{{ customer.address }}</td>
+              <td>{{ customer.iban }}</td>
+              <td>{{ customer.phoneNumber }}</td>
+              <td>{{ customer.typeOfService }}</td>
             </tr>
             </tbody>
           </table>

@@ -10,7 +10,7 @@ import {HttpEvent} from '@angular/common/http';
 })
 export class RidersComponent implements OnInit {
 
-  private riders: Rider[];
+  riders: Rider[];
 
   constructor(
     private adminService: BasicQueriesService
