@@ -154,7 +154,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         }, 400);
       }.bind(this);
 
-      html.classList.add("nav-open");
+      html.classList.add('nav-open');
       this.mobile_menu_visible = 1;
     }
   }
