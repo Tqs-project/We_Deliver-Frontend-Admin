@@ -7,10 +7,8 @@ describe('BasicQueriesService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
+
     service = TestBed.inject(BasicQueriesService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });
