@@ -11,7 +11,7 @@ import {HttpEvent} from '@angular/common/http';
 })
 export class StoresComponent implements OnInit {
 
-  orders: HttpEvent<Customer[]>;
+  orders: Customer[];
 
   constructor(
     private adminService: BasicQueriesService

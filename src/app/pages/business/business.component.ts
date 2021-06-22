@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 import {BasicQueriesService} from '../../basic-queries.service';
 import {Order} from '../../models/Order';
-import {HttpEvent} from '@angular/common/http';
+import {HttpEvent, HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-business',
@@ -20,7 +20,7 @@ export class BusinessComponent implements OnInit {
   public clicked2: boolean = false;
 
   private totalMoney: number;
-  private orders: HttpEvent<Order[]>;
+  private orders: Order[];
 
   constructor(
     private adminService: BasicQueriesService
@@ -30,9 +30,13 @@ export class BusinessComponent implements OnInit {
 
   ngOnInit() {
     this.adminService.getOrders().subscribe(
-      response => {
+      (response) => {
         console.log(response);
         this.orders = response;
+
+        response.forEach(
+          order => this.totalMoney += order.cost
+        )
       }
     );
 

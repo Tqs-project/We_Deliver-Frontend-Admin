@@ -10,6 +10,7 @@ import { Customer } from './models/Customer';
 const httpOptions = {
   headers : new HttpHeaders(
     {'Content-Type' : 'application/json',
+              observe: 'response',
               username : 'Ronaldo',
               idToken : '$2a$10$vi/eSzkjD1EU6sG51lUe6e6X/sSqlFj4FLMaJiTcenVveWOXIAEm2'}
   )
@@ -29,21 +30,24 @@ export class BasicQueriesService {
     return httpOptions;
   }
 
-  getRiders(): Observable<HttpEvent<Rider[]>> {
+  getRiders(): Observable<Rider[]> {
     const url = this.BASE_URL + '/riders';
 
+    // @ts-ignore
     return this.http.get<Rider[]>(url, this.getHeader());
   }
 
-  getOrders(): Observable<HttpEvent<Order[]>> {
+  getOrders(): Observable<Order[]> {
     const url = this.BASE_URL + '/orders';
 
+    // @ts-ignore
     return this.http.get<Order[]>(url, this.getHeader());
   }
 
-  getCustomers(): Observable<HttpEvent<Customer[]>> {
+  getCustomers(): Observable<Customer[]> {
     const url = this.BASE_URL + '/customers';
 
+    // @ts-ignore
     return this.http.get<Customer[]>(url, this.getHeader());
   }
 
